@@ -1,4 +1,4 @@
-*/Amal Xavier
+/*Amal Xavier
   S3 D 04
   Bubblesort*/
 #include<conio.h>
