@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Quicksort non-recursive*/
 #include <stdio.h>
 
 void swap(int *a, int *b) {
