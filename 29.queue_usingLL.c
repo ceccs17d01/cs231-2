@@ -1,143 +1,82 @@
 /*Amal Xavier
   S3 D 04
   Queue using LinkedList*/
-#include<stdio.h>
-#include<stdlib.h>
-int c=0;
-struct node
-{
-    int data;
-    struct node *next;
 
-}*header;
+#include <stdio.h>
+#include <stdlib.h>
 
-struct node *newnode()
-{
-    struct node* newn=malloc(sizeof(struct node));
-    if(newn==NULL)
-    {
-
-
-        printf("\nMemory overflow");
-    exit(0);
-    }
-     else
-     {
-         return (newn);
-     }
+struct node {
+	int data;
+	struct node *next;
+}*HEADER;
+int deleteAll() {
+	struct node *ptr = HEADER, *prevPtr;
+	while (ptr != NULL) {
+		prevPtr = ptr;
+		ptr = ptr->next;
+		free(prevPtr);
+	}
+	HEADER->next = NULL;
+	return (0);
 }
-int enqueue()
-{
-    int data;
-  struct node *new=newnode(),*cnode=header;
-  printf("enter data :");
-  scanf("%d",&data);
-  while(cnode->next!=NULL)
-  {
-    cnode=cnode->next;
-  }
-  new->data=data;
-  new->next=NULL;
-  cnode->next=new;
-  c++;
-
-  return 0;
+struct node *newNode() {
+	struct node *newptr = malloc(sizeof(struct node));
+	if (newptr == NULL) {
+		printf("Memory overflow");
+		deleteAll();
+		exit(0);
+	}
+	return (newptr);
 }
-int dequeue()
-{
-    struct node *new=header->next,*cnode=header;
-   if(header->next==NULL)
-   {
-              printf("\n empty queue ");
-
-   }
-    else
-   {
-       cnode=new;
-     new=new->next ;
-     header->next=cnode->next;
-     header->next=new;
-     printf("\nenqueued elem is %d  ",cnode->data);
-     free(cnode);
-     c--;
-
-    }
-return 0;
+void enqueue() {
+  int data;
+  printf("Enter data to be entered : ");
+  scanf("%d", &data);
+	struct node *newptr = newNode(), *currentNode = HEADER;
+	while (currentNode->next != NULL) {
+		currentNode = currentNode->next;
+	}
+	newptr->next = currentNode->next;
+	newptr->data = data;
+	currentNode->next = newptr;
 }
-int delete()
-{
-    struct node *new=header->next,*cnode=header;
-
-
-
-
-    while(new!=NULL)
-    {
-        cnode=new;
-     new=new->next;
-     free(cnode);printf("\n1.enqueue\n2.dequeue\n3.display\n4.count\n5.delete_all\n6.exit\nenter choice:");
-     c--;
-
-
-    }
-    header->next=NULL;
-
-return 0;
+void dequeue() {
+	struct node *currentNode = HEADER->next;
+	if (currentNode == NULL) {
+		printf("Empty linked list.\nDeletion failed.\n");
+	} else {
+		HEADER->next = currentNode->next;
+		free(currentNode);
+	}
 }
-int  display()
-{
-
-    struct node *new=header->next;
-    if(header->next==NULL)
-        printf("\nempty");
-    else{
-        while(new->next!=NULL)
-        {
-
-            printf("  ->%d",new->data);
-            new=new->next;
-        }
-        printf("  ->%d",new->data);
-
-    }
-    return 0;
+void printQueue() {
+	struct node *currentNode = HEADER->next;
+	printf("\nLinked List\nHEADER->");
+	while (currentNode != NULL) {
+		printf("%d->", currentNode->data);
+		currentNode = currentNode->next;
+	}
+	printf("NULL\n");
 }
-int main()
-{
-
-    int ch,data;
-    printf("\n1.enqueue\n2.dequeue\n3.display\n4.count\n5.delete_all\n6.exit\nenter choice:");
-    scanf("%d",&ch);
-    header=newnode();
-    header->next=NULL;
-
-    while(1)
-    {
-        switch(ch)
-        {
-        case 1:
-           enqueue();
-            break;
-        case 2:
-            dequeue();
-            break;
-        case 3:
-            display();
-            break;
-        case 4:
-            printf("no of elem in queue is %d",c);
-            break;
-        case 5:
-            delete();
-            break;
-        case 6:
-            exit(0);
-        default:
-            printf("wrong choice");
-        }
-        printf("\n1.enqueue\n2.dequeue\n3.display\n4.count\n5.delete_all\n6.exit\nenter choice:");
-    scanf("%d",&ch);
-    }
-    return 0;
-
+int main() {
+	char choice;
+	HEADER = malloc(sizeof(struct node));
+	HEADER->data = 0;
+	HEADER->next = NULL;
+	do {
+		printf("\n\tQueue using array\n1.Enqueu\n2.Dequeue\n3.Display\n4.Exit\nEnter your choice : ");
+		scanf(" %c", &choice);
+		switch(choice) {
+			case '1':
+				enqueue();
+				break;
+			case '2':
+				dequeue();
+				break;
+			case '3':
+				printQueue();
+				break;
+		}
+	} while(choice != '4');
+  deleteAll();
 }
