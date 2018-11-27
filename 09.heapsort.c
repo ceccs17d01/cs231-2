@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Heap Sort*/
 #include<stdio.h>
 void main()
 {
