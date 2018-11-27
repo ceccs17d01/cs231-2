@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Deque using LinkedList*/
 #include <stdio.h>
 #include <stdlib.h>
 
