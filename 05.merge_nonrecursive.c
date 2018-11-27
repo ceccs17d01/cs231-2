@@ -1,5 +1,6 @@
-/* Non recursive mergesort
-   Amal Xavier S3 D 04*/
+/* Amal Xavier
+   S3 D 04
+   Mergesort non-recursive*/
 #include<stdio.h>
 
 #define max 25
