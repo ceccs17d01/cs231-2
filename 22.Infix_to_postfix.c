@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Infix to Postfix*/
 #include <stdio.h>
 
 int instackPriority(char symbol) {
