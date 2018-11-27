@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Stack Using Array*/
 #include<stdio.h>
  
 int stack[100],choice,n,top,x,i;
