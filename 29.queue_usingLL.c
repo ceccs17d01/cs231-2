@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Queue using LinkedList*/
 #include<stdio.h>
 #include<stdlib.h>
 int c=0;
