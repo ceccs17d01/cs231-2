@@ -1,3 +1,7 @@
+/*Amal Xavier
+  S3 D 04
+  Sequential Search*/
+
 #include <stdio.h>
 
 int sequentialSearch(int array[], int size, int element) {
