@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Arithametic Expression using LinkedList*/
 #include <stdio.h>
 #include <stdlib.h>
 
