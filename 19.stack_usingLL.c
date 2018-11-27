@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Stack using Linked List*/
 #include<stdio.h>
 #include<stdlib.h>
 int c=0;
