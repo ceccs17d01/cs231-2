@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Polynomial Addition*/
 #include <stdio.h>
 #include <stdlib.h>
 struct node {
