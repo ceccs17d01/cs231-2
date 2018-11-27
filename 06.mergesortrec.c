@@ -1,5 +1,6 @@
-/* Merge Sort With Recursion
-   Amal Xavier S3 D 04*/
+/* Amal Xavier 
+   S3 D 04
+   Merge Sort With Recursion*/
 #include<stdio.h>
 void mergesort(int a[],int i,int j);
 void merge(int a[],int i1,int j1,int i2,int j2);
