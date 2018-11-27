@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Multiple Stack using Array*/
 #include <stdio.h>
 #define size 100
 
