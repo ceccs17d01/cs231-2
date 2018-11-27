@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Postfix Evaluation*/
 #include <stdio.h>
 #include <stdlib.h>
 int power(int base, int exponent) {
