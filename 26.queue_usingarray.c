@@ -1,3 +1,6 @@
+/*Amal Xavier
+  S3 D 04
+  Queue using Array*/
 #include <stdio.h>
  
 #define MAX 50
